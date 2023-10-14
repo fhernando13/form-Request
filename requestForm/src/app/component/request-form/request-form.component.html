@@ -1,0 +1,206 @@
+<app-navigate></app-navigate>
+<div class="container-fluid">
+    <div class="container">
+        <mat-card class="example-card">
+          <div class="row">
+            <div class="col-12" id="titles">
+              <h3>{{title|uppercase}}</h3>
+              <mat-divider></mat-divider>
+            </div>
+          </div>
+
+            <mat-card-content>
+              <!-- form -->
+              <div class="row">
+                <div class="col-6">
+                    <span>Date to request: {{today}}</span>
+                </div>
+                <div class="col-6 ">
+                    <span>Ticket no: 001</span>
+                </div>
+              </div>
+              <br>
+              <div class="row" id="titles">
+                <div class="col-12"><h3>{{subtitle|uppercase}}</h3></div>
+              </div>
+
+              <div class="row">
+                <div class="col-4">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Name complete</mat-label>
+                        <input type="text" matInput formControlName="name" placeholder="Add name">
+                        </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Position</mat-label>
+                    <input type="text" matInput formControlName="name" placeholder="Add name">
+                </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Department</mat-label>
+                    <input type="text" matInput formControlName="name" placeholder="Add name">
+                </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-4">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Company</mat-label>
+                        <input type="text" matInput formControlName="name" placeholder="Add name">
+                        </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Branch/Warehouse</mat-label>
+                    <input type="text" matInput formControlName="name" placeholder="Add name">
+                </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>City</mat-label>
+                    <input type="text" matInput formControlName="name" placeholder="Add name">
+                </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-4">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>State</mat-label>
+                        <input type="text" matInput formControlName="name" placeholder="Add name">
+                        </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Phone</mat-label>
+                    <input type="text" matInput formControlName="name" placeholder="Add name">
+                </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input type="text" matInput formControlName="name" placeholder="Add name">
+                </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row" id="titles">
+                <div class="col-12"><h3>{{subtitle2|uppercase}}</h3></div>
+              </div>
+
+              <div class="row">
+                <div class="col-3">
+                  <mat-form-field>
+                    <mat-label>Type requirement</mat-label>
+                    <select matNativeControl required>
+                      <option value="newDev">New Development</option>
+                      <option value="adjustment">Adjustment to software</option>
+                    </select>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-3">
+                  <mat-form-field>
+                    <mat-label>Priority</mat-label>
+                    <select matNativeControl required>
+                      <option value="high">High</option>
+                      <option value="middle">Middle</option>
+                      <option value="low">Low</option>
+                    </select>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-3">
+                  <mat-form-field>
+                    <mat-label>Status</mat-label>
+                    <select matNativeControl required>
+                      <option value="validation">Validation</option>
+                      <option value="development">Development</option>
+                      <option value="unitTest">Unit tests</option>
+                      <option value="qaTest">QA test</option>
+                      <option value="ufTest">UF test</option>
+                    </select>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-3">
+                  <mat-form-field>
+                    <mat-label>Company to application</mat-label>
+                    <select matNativeControl required>
+                      <option value="psr">PSR</option>
+                      <option value="shelsa">SHELSA</option>
+                      <option value="pappersell">PAPERSELL</option>
+                      <option value="all">All</option>
+                    </select>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row" id="titles">
+                <div class="col-12"><h3>{{subtitle3|uppercase}}</h3></div>
+                <br>
+                <mat-form-field class="example-full-width">
+                  <mat-label>{{subtitle3}}</mat-label>
+                  <textarea matInput></textarea>
+                </mat-form-field>
+              </div>
+
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<!-- '#', 'requirements', 'description', 'img' -->
+                <!-- Name Column -->
+                <ng-container matColumnDef="#">
+                  <th mat-header-cell *matHeaderCellDef> Name </th>
+                  <td mat-cell *matCellDef="let element">  </td>
+                </ng-container>
+
+                <!-- Lastname Column -->
+                <ng-container matColumnDef="requirement">
+                  <th mat-header-cell *matHeaderCellDef> Lastname </th>
+                  <td mat-cell *matCellDef="let element">  </td>
+                </ng-container>
+
+                <!-- Age Column -->
+                <ng-container matColumnDef="description">
+                  <th mat-header-cell *matHeaderCellDef> Age </th>
+                  <td mat-cell *matCellDef="let element">  </td>
+                </ng-container>
+
+                <!-- Email -->
+                <ng-container matColumnDef="img">
+                    <th mat-header-cell *matHeaderCellDef> Email </th>
+                    <td mat-cell *matCellDef="let element"> </td>
+                </ng-container>
+
+                
+
+                <!-- Buttons -->
+
+                <ng-container matColumnDef="edit">
+                    <th mat-header-cell *matHeaderCellDef>  </th>
+                    <td mat-cell *matCellDef="let element">
+                        <button
+                        mat-mini-fab
+                        color="primary"
+                        matTooltip="Options"
+
+                        ><mat-icon>edit</mat-icon>
+                        </button>                        
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+
+
+            </mat-card-content>
+
+            <mat-card-actions>
+              <!-- buttons -->
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

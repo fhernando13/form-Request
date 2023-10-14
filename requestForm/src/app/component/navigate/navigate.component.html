@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+      <!-- <img src="./assets/angular1.png" alt="Logo" width="45" height="45" class="d-inline-block align-text-top"> -->
+
+      <button mat-button [matMenuTriggerFor]="oneMenu">Request</button>
+      <mat-menu #oneMenu="matMenu" xPosition="after">
+        <button mat-menu-item (click)="requestForm()">Form</button>
+        <button mat-menu-item routerLink="/requestList">List</button>        
+      </mat-menu>          
+
+
+    <span class="example-spacer"></span>
+    
+    <button mat-stroked-button mat-button [matMenuTriggerFor]="profileMenu">My rofile</button>
+      <mat-menu #profileMenu="matMenu" xPosition="before">
+        <button mat-menu-item>
+            <mat-slide-toggle (ngModelChange)="onChange($event)" [ngModel]="isDarkThemeActive" >
+                <mat-icon>wb_sunny</mat-icon>
+            </mat-slide-toggle>
+        </button>
+        <button mat-menu-item>Logout</button>
+      </mat-menu>
+
+</mat-toolbar>
+        
+          
+    
+              
