@@ -28,19 +28,19 @@
                 <div class="col-4">
                     <mat-form-field class="example-full-width">
                         <mat-label>Name complete</mat-label>
-                        <input type="text" matInput  placeholder="Add name">
+                        <input type="text" matInput  placeholder="Add name complete">
                         </mat-form-field>
                 </div>
                 <div class="col-4">
                   <mat-form-field class="example-full-width">
-                    <mat-label>Position</mat-label>
-                    <input type="text" matInput  placeholder="Add name">
+                    <mat-label>Job</mat-label>
+                    <input type="text" matInput  placeholder="Add job">
                 </mat-form-field>
                 </div>
                 <div class="col-4">
                   <mat-form-field class="example-full-width">
                     <mat-label>Department</mat-label>
-                    <input type="text" matInput  placeholder="Add name">
+                    <input type="text" matInput  placeholder="Add department">
                 </mat-form-field>
                 </div>
               </div>
@@ -49,19 +49,19 @@
                 <div class="col-4">
                     <mat-form-field class="example-full-width">
                         <mat-label>Company</mat-label>
-                        <input type="text" matInput  placeholder="Add name">
+                        <input type="text" matInput  placeholder="Add company">
                         </mat-form-field>
                 </div>
                 <div class="col-4">
                   <mat-form-field class="example-full-width">
                     <mat-label>Branch/Warehouse</mat-label>
-                    <input type="text" matInput  placeholder="Add name">
+                    <input type="text" matInput  placeholder="Add Branch/Warehouse">
                 </mat-form-field>
                 </div>
                 <div class="col-4">
                   <mat-form-field class="example-full-width">
                     <mat-label>City</mat-label>
-                    <input type="text" matInput  placeholder="Add name">
+                    <input type="text" matInput  placeholder="Add city">
                 </mat-form-field>
                 </div>
               </div>
@@ -70,19 +70,19 @@
                 <div class="col-4">
                     <mat-form-field class="example-full-width">
                         <mat-label>State</mat-label>
-                        <input type="text" matInput  placeholder="Add name">
+                        <input type="text" matInput  placeholder="Add state">
                         </mat-form-field>
                 </div>
                 <div class="col-4">
                   <mat-form-field class="example-full-width">
                     <mat-label>Phone</mat-label>
-                    <input type="text" matInput  placeholder="Add name">
+                    <input type="text" matInput  placeholder="Add phone">
                 </mat-form-field>
                 </div>
                 <div class="col-4">
                   <mat-form-field class="example-full-width">
                     <mat-label>Email</mat-label>
-                    <input type="text" matInput  placeholder="Add name">
+                    <input type="text" matInput  placeholder="Add email">
                 </mat-form-field>
                 </div>
               </div>
@@ -104,7 +104,7 @@
 
                 <div class="col-3">
                   <mat-form-field>
-                    <mat-label>Priority</mat-label>
+                    <mat-label>Choice priority</mat-label>
                     <select matNativeControl required>
                       <option value="high">High</option>
                       <option value="middle">Middle</option>
@@ -143,41 +143,43 @@
                 <div class="col-12"><h3>{{subtitle3|uppercase}}</h3></div>
                 <br>
                 <mat-form-field class="example-full-width">
-                  <mat-label>{{subtitle3}}</mat-label>
+                  <mat-label>Describes the general objective</mat-label>
                   <textarea matInput></textarea>
                 </mat-form-field>
               </div>
 
+              <div class="row" id="titles">
+                <div class="col-10">
+                  <h3>{{subtitle4|uppercase}}</h3>
+                </div>
+                <div class="col-2">
+                  <button mat-raised-button color="warn"
+                  matTooltip="Add requirement to register"
+                  (click)="openDialog()"
+                  >Add requirement</button>
+                </div>
+              </div>
               <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-<!-- '#', 'requirements', 'description', 'img' -->
+
                 <!-- Name Column -->
                 <ng-container matColumnDef="#">
-                  <th mat-header-cell *matHeaderCellDef> Name </th>
+                  <th mat-header-cell *matHeaderCellDef>#</th>
                   <td mat-cell *matCellDef="let element">  </td>
                 </ng-container>
 
                 <!-- Lastname Column -->
                 <ng-container matColumnDef="requirement">
-                  <th mat-header-cell *matHeaderCellDef> Lastname </th>
+                  <th mat-header-cell *matHeaderCellDef>Requirement</th>
                   <td mat-cell *matCellDef="let element">  </td>
                 </ng-container>
 
                 <!-- Age Column -->
                 <ng-container matColumnDef="description">
-                  <th mat-header-cell *matHeaderCellDef> Age </th>
+                  <th mat-header-cell *matHeaderCellDef>Description</th>
                   <td mat-cell *matCellDef="let element">  </td>
                 </ng-container>
-
-                <!-- Email -->
-                <ng-container matColumnDef="img">
-                    <th mat-header-cell *matHeaderCellDef> Email </th>
-                    <td mat-cell *matCellDef="let element"> </td>
-                </ng-container>
-
-                
-
+                            
                 <!-- Buttons -->
-
                 <ng-container matColumnDef="edit">
                     <th mat-header-cell *matHeaderCellDef>  </th>
                     <td mat-cell *matCellDef="let element">

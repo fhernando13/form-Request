@@ -1,5 +1,7 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddrequestComponent } from '../dialogs/addrequest/addrequest.component';
 
 // Angular Material
 import { MatPaginator } from '@angular/material/paginator';
@@ -12,16 +14,19 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class RequestFormComponent implements OnInit {
 
-  displayedColumns: string[] = [ '#', 'requirement', 'description', 'img'];
+  displayedColumns: string[] = [ '#', 'requirement', 'description'];
   dataSource = new MatTableDataSource();
 
   title="request for requirements";
   today =  formatDate(new Date(), 'yyyy-MM-dd', 'en-US');
   subtitle= "applicant information ";
-  subtitle2 = "informatoin about the request";
+  subtitle2 = "information about the request";
   subtitle3 = "general objective";
+  subtitle4 = "Requirements";
 
-  constructor(){
+  constructor(
+    public dialog: MatDialog
+  ){
 
   }
 
@@ -29,6 +34,9 @@ export class RequestFormComponent implements OnInit {
     
   }
 
+  openDialog(){
+    const dialogRef = this.dialog.open(AddrequestComponent)
+  }
 
 
 }
