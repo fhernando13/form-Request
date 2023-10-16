@@ -1,2 +1,68 @@
 <app-navigate></app-navigate>
-<p>request-list works!</p>
+<div class="container-fluid" id="cardlist">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                      
+                    </mat-card-header>
+                    
+                    <mat-card-content>
+                      <!-- table -->
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Filter</mat-label>
+                        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+                      </mat-form-field>
+                      
+                      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                      
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="position">
+                          <th mat-header-cell *matHeaderCellDef> No. </th>
+                          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                        </ng-container>
+                      
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="name">
+                          <th mat-header-cell *matHeaderCellDef> Name </th>
+                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+                      
+                        <!-- Weight Column -->
+                        <ng-container matColumnDef="weight">
+                          <th mat-header-cell *matHeaderCellDef> Weight </th>
+                          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                        </ng-container>
+                      
+                        <!-- Symbol Column -->
+                        <ng-container matColumnDef="symbol">
+                          <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                        </ng-container>
+                      
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                      
+                        <!-- Row shown when there is no matching data. -->
+                        <tr class="mat-row" *matNoDataRow>
+                          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                        </tr>
+                      </table>
+                  <mat-paginator [length]="100"
+                                  [pageSize]="10"
+                                  [pageSizeOptions]="[10, 20]"
+                                  aria-label="Select page">
+                    </mat-paginator>
+        
+        
+                    </mat-card-content>
+                    <mat-card-actions>
+                      
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>        
+    </div>    
+</div>
+
