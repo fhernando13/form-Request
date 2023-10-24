@@ -1,4 +1,5 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿
+using apiRequestForm.Entities;
 
 namespace apiRequestForm.Entities
 {
@@ -6,5 +7,6 @@ namespace apiRequestForm.Entities
     {
         public int IdState { get; set; }
         public string NameState { get; set; } = null!;
+        public ICollection<Municipality> Posts { get; } = new List<Municipality>();
     }
 }

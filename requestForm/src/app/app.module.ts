@@ -26,6 +26,7 @@ import { MatTableModule } from '@angular/material/table';
 import { AddrequestComponent } from './component/dialogs/addrequest/addrequest.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ListStateComponent } from './component/list-state/list-state.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     RequestListComponent,
     RequestFormComponent,
     AddrequestComponent,
+    ListStateComponent,
         
   ],
   imports: [

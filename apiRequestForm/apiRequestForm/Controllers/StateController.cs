@@ -6,9 +6,9 @@ using System.Data.SqlClient;
 
 namespace apiRequestForm.Controllers
 {
-    
-    [Route("api/states")]
+
     [ApiController]
+    [Route("api/states")]
     public class StateController : ControllerBase
     {
         private readonly string defaultConnection;
